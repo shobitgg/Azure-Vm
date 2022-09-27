@@ -4,7 +4,7 @@ resource "azurerm_resource_group" "rg" {
   location = var.resource_group_location
 
   tags = {
-    environment = "production"
+    project = "vm_poc"
   }
 }
 
@@ -16,7 +16,7 @@ resource "azurerm_virtual_network" "vnet" {
   resource_group_name = azurerm_resource_group.rg.name
 
   tags = {
-    environment = "production"
+    project = "vm_poc"
   }
 }
 
@@ -36,7 +36,7 @@ resource "azurerm_public_ip" "public_ip" {
   allocation_method   = "Dynamic"
 
   tags = {
-    environment = "production"
+    project = "vm_poc"
   }
 }
 
@@ -59,7 +59,7 @@ resource "azurerm_network_security_group" "nsg" {
   }
 
   tags = {
-    environment = "production"
+    project = "vm_poc"
   }
 }
 
@@ -77,7 +77,7 @@ resource "azurerm_network_interface" "nic" {
   }
 
   tags = {
-    environment = "production"
+    project = "vm_poc"
   }
 }
 
@@ -106,7 +106,7 @@ resource "azurerm_storage_account" "storage" {
   account_replication_type = "LRS"
 
   tags = {
-    environment = "production"
+    project = "vm_poc"
   }
 }
 
@@ -139,7 +139,8 @@ resource "azurerm_linux_virtual_machine" "linuxvm" {
 
   computer_name                   = "myvm"
   admin_username                  = "azureuser"
-  disable_password_authentication = true
+  admin_password                  = "azurepsswd#@)#(&@)#&)#@"
+  disable_password_authentication = false
 
   admin_ssh_key {
     username   = "azureuser"
@@ -151,6 +152,6 @@ resource "azurerm_linux_virtual_machine" "linuxvm" {
   }
 
   tags = {
-    environment = "production"
+    project = "vm_poc"
   }
 }
