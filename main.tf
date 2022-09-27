@@ -4,7 +4,7 @@ resource "azurerm_resource_group" "rg" {
   location = var.resource_group_location
 
   tags = {
-    project = "vm_poc"
+    owner = "shobit"
   }
 }
 
@@ -16,7 +16,7 @@ resource "azurerm_virtual_network" "vnet" {
   resource_group_name = azurerm_resource_group.rg.name
 
   tags = {
-    project = "vm_poc"
+    owner = "shobit"
   }
 }
 
@@ -36,7 +36,7 @@ resource "azurerm_public_ip" "public_ip" {
   allocation_method   = "Dynamic"
 
   tags = {
-    project = "vm_poc"
+    owner = "shobit"
   }
 }
 
@@ -59,7 +59,7 @@ resource "azurerm_network_security_group" "nsg" {
   }
 
   tags = {
-    project = "vm_poc"
+    owner = "shobit"
   }
 }
 
@@ -77,7 +77,7 @@ resource "azurerm_network_interface" "nic" {
   }
 
   tags = {
-    project = "vm_poc"
+    owner = "shobit"
   }
 }
 
@@ -106,7 +106,7 @@ resource "azurerm_storage_account" "storage" {
   account_replication_type = "LRS"
 
   tags = {
-    project = "vm_poc"
+    owner = "shobit"
   }
 }
 
@@ -152,6 +152,6 @@ resource "azurerm_linux_virtual_machine" "linuxvm" {
   }
 
   tags = {
-    project = "vm_poc"
+    owner = "shobit"
   }
 }

@@ -1,5 +1,5 @@
 resource_group_name         = "poc_my_terraform_rg"
-resource_group_location     = "poc_West Europe"
+resource_group_location     = "West Europe"
 virtual_network_name        = "poc_vnetprod019"
 subnet_name                 = "poc_subnet019"
 public_ip_name              = "poc_publicip019"
