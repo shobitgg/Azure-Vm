@@ -4,7 +4,7 @@ resource "azurerm_resource_group" "rg" {
   location = var.resource_group_location
 
   tags = {
-    owner = "shobit"
+    project = "azure_terraform_githubactions"
   }
 }
 
@@ -16,7 +16,7 @@ resource "azurerm_virtual_network" "vnet" {
   resource_group_name = azurerm_resource_group.rg.name
 
   tags = {
-    owner = "shobit"
+    project = "azure_terraform_githubactions"
   }
 }
 
@@ -36,7 +36,7 @@ resource "azurerm_public_ip" "public_ip" {
   allocation_method   = "Dynamic"
 
   tags = {
-    owner = "shobit"
+    project = "azure_terraform_githubactions"
   }
 }
 
@@ -59,7 +59,7 @@ resource "azurerm_network_security_group" "nsg" {
   }
 
   tags = {
-    owner = "shobit"
+    project = "azure_terraform_githubactions"
   }
 }
 
@@ -77,7 +77,7 @@ resource "azurerm_network_interface" "nic" {
   }
 
   tags = {
-    owner = "shobit"
+    project = "azure_terraform_githubactions"
   }
 }
 
@@ -106,7 +106,7 @@ resource "azurerm_storage_account" "storage" {
   account_replication_type = "LRS"
 
   tags = {
-    owner = "shobit"
+    project = "azure_terraform_githubactions"
   }
 }
 
@@ -152,6 +152,6 @@ resource "azurerm_linux_virtual_machine" "linuxvm" {
   }
 
   tags = {
-    owner = "shobit"
+    project = "azure_terraform_githubactions"
   }
 }
